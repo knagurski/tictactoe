@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.board {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.board__cell {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board__cell::before {
+  content: '';
+  width: 0;
+  height: 0;
+  display: block;
+  padding-bottom: 100%;
+}
+
+.board__cell:nth-child(3n) {
+  border-right: none;
+}
+
+.board__cell:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+.current_player {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.current_player--hide {
+  display: none;
+}
